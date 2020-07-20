@@ -35,6 +35,11 @@
     border-top: 1px solid #ccc;
 }
 
+.map-container {
+    height: 15rem;
+    width: 100%;
+}
+
 .place-item__modal-content {
     padding: 0;
 }

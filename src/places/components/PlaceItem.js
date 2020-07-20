@@ -4,8 +4,9 @@ import Card from "../../shared/components/UIElements/Card";
 import "./PlaceItem.css";
 import Button from "../../shared/components/FormElements/Button";
 import Modal from "../../shared/components/UIElements/Modal";
+import Map from "../../shared/components/UIElements/Map";
 
-function PlaceItem({id, image, title, address, description}) {
+function PlaceItem({id, image, title, address, description, location}) {
   const [showMap, setShowMap] = useState(false);
 
   const openMapHandler = () => setShowMap(true);
@@ -14,6 +15,8 @@ function PlaceItem({id, image, title, address, description}) {
 
   return (
     <React.Fragment>
+      {console.log(location)}
+
       <Modal
         show={showMap}
         onCancel={closeMapHandler}
@@ -23,7 +26,7 @@ function PlaceItem({id, image, title, address, description}) {
         footer={<Button onClick={closeMapHandler}>CLOSE</Button>}
       >
         <div className='map-container'>
-          <h2>THE MAP</h2>
+          <Map center={location} zoom={16} />
         </div>
       </Modal>
       <li className='place-item'>

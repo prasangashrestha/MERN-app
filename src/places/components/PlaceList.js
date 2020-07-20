@@ -2,7 +2,6 @@ import React from "react";
 
 import "./PlaceList.css";
 import Card from "../../shared/components/UIElements/Card";
-import {Link} from "react-router-dom";
 import PlaceItem from "./PlaceItem";
 
 const PlaceList = (props) => {
